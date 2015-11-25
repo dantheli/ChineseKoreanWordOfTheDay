@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6569C25B1BEBCBF000D8F850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C25A1BEBCBF000D8F850 /* AppDelegate.swift */; };
+		6569C2601BEBCBF000D8F850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6569C25E1BEBCBF000D8F850 /* Main.storyboard */; };
+		6569C2621BEBCBF000D8F850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6569C2611BEBCBF000D8F850 /* Assets.xcassets */; };
+		6569C2651BEBCBF000D8F850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6569C2631BEBCBF000D8F850 /* LaunchScreen.storyboard */; };
+		6569C26D1BEBE65200D8F850 /* TermCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C26C1BEBE65200D8F850 /* TermCell.swift */; };
+		6569C2931BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2871BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m */; };
+		6569C2941BEBEDAB00D8F850 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2891BEBEDAB00D8F850 /* ECSlidingAnimationController.m */; };
+		6569C2951BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C28C1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m */; };
+		6569C2961BEBEDAB00D8F850 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C28E1BEBEDAB00D8F850 /* ECSlidingSegue.m */; };
+		6569C2971BEBEDAB00D8F850 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2901BEBEDAB00D8F850 /* ECSlidingViewController.m */; };
+		6569C2981BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2921BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m */; };
+		6569C29A1BEBF07100D8F850 /* ChineseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2991BEBF07100D8F850 /* ChineseViewController.swift */; };
+		6569C29D1BEBF0B600D8F850 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */; };
+		6569C29F1BEBF4F500D8F850 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C29E1BEBF4F500D8F850 /* Term.swift */; };
+		6569C2A21BEBF52900D8F850 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A01BEBF52900D8F850 /* Realm.framework */; };
+		6569C2A31BEBF52900D8F850 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A01BEBF52900D8F850 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6569C2A41BEBF52900D8F850 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A11BEBF52900D8F850 /* RealmSwift.framework */; };
+		6569C2A51BEBF52900D8F850 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A11BEBF52900D8F850 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6569C2A81BEBF9AA00D8F850 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2A71BEBF9AA00D8F850 /* Functions.swift */; };
+		65873AAF1BEE8910002ADFA4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65873AAE1BEE8910002ADFA4 /* MenuCell.swift */; };
+		6587601A1BF6D1D10099A7E2 /* QuizPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658760191BF6D1D10099A7E2 /* QuizPreferencesViewController.swift */; };
+		6587601C1BF6DA8C0099A7E2 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587601B1BF6DA8C0099A7E2 /* QuizViewController.swift */; };
+		6587601E1BF7D7E80099A7E2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587601D1BF7D7E80099A7E2 /* Question.swift */; };
+		658AF8F21BEEC037000CDC32 /* SelectDefaultLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AF8F11BEEC037000CDC32 /* SelectDefaultLanguageViewController.swift */; };
+		65AA9FE01BEC4CCF0050A01A /* KoreanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA9FDF1BEC4CCF0050A01A /* KoreanViewController.swift */; };
+		65C414891BF7DF4500ADF3BF /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C414881BF7DF4500ADF3BF /* Quiz.storyboard */; };
+		65C4148B1BF7EB9700ADF3BF /* QuizResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4148A1BF7EB9700ADF3BF /* QuizResultsViewController.swift */; };
+		65CF4A341BEC4DDA001BFDCB /* TermDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A331BEC4DDA001BFDCB /* TermDetailViewController.swift */; };
+		65CF4A361BEC5A01001BFDCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */; };
+		65CF4A381BECFD07001BFDCB /* NewTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */; };
+		65CF4A3B1BED3086001BFDCB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6569C2A61BEBF52900D8F850 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6569C2A51BEBF52900D8F850 /* RealmSwift.framework in Embed Frameworks */,
+				6569C2A31BEBF52900D8F850 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6569C2571BEBCBF000D8F850 /* Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Language.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6569C25A1BEBCBF000D8F850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6569C25F1BEBCBF000D8F850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6569C2611BEBCBF000D8F850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6569C2641BEBCBF000D8F850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6569C2661BEBCBF000D8F850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6569C26C1BEBE65200D8F850 /* TermCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermCell.swift; sourceTree = "<group>"; };
+		6569C2851BEBEDAA00D8F850 /* Language-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Language-Bridging-Header.h"; sourceTree = "<group>"; };
+		6569C2861BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		6569C2871BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		6569C2881BEBEDAB00D8F850 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		6569C2891BEBEDAB00D8F850 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		6569C28A1BEBEDAB00D8F850 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		6569C28B1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		6569C28C1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		6569C28D1BEBEDAB00D8F850 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		6569C28E1BEBEDAB00D8F850 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		6569C28F1BEBEDAB00D8F850 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		6569C2901BEBEDAB00D8F850 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		6569C2911BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		6569C2921BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+		6569C2991BEBF07100D8F850 /* ChineseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseViewController.swift; sourceTree = "<group>"; };
+		6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		6569C29E1BEBF4F500D8F850 /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		6569C2A01BEBF52900D8F850 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Realm.framework; sourceTree = "<group>"; };
+		6569C2A11BEBF52900D8F850 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../RealmSwift.framework; sourceTree = "<group>"; };
+		6569C2A71BEBF9AA00D8F850 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		65873AAE1BEE8910002ADFA4 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		658760191BF6D1D10099A7E2 /* QuizPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPreferencesViewController.swift; sourceTree = "<group>"; };
+		6587601B1BF6DA8C0099A7E2 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		6587601D1BF7D7E80099A7E2 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		658AF8F11BEEC037000CDC32 /* SelectDefaultLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDefaultLanguageViewController.swift; sourceTree = "<group>"; };
+		65AA9FDF1BEC4CCF0050A01A /* KoreanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoreanViewController.swift; sourceTree = "<group>"; };
+		65C414881BF7DF4500ADF3BF /* Quiz.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		65C4148A1BF7EB9700ADF3BF /* QuizResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultsViewController.swift; sourceTree = "<group>"; };
+		65CF4A331BEC4DDA001BFDCB /* TermDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermDetailViewController.swift; sourceTree = "<group>"; };
+		65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTermViewController.swift; sourceTree = "<group>"; };
+		65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6569C2541BEBCBF000D8F850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6569C2A41BEBF52900D8F850 /* RealmSwift.framework in Frameworks */,
+				6569C2A21BEBF52900D8F850 /* Realm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6569C24E1BEBCBEF00D8F850 = {
+			isa = PBXGroup;
+			children = (
+				6569C2591BEBCBF000D8F850 /* Language */,
+				6569C2581BEBCBF000D8F850 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6569C2581BEBCBF000D8F850 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6569C2571BEBCBF000D8F850 /* Language.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6569C2591BEBCBF000D8F850 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				6569C25A1BEBCBF000D8F850 /* AppDelegate.swift */,
+				6569C25E1BEBCBF000D8F850 /* Main.storyboard */,
+				65C414881BF7DF4500ADF3BF /* Quiz.storyboard */,
+				6569C29B1BEBF07C00D8F850 /* Language */,
+				658760161BF6C7560099A7E2 /* Quiz */,
+				65873AB01BEE9715002ADFA4 /* Settings */,
+				65CF4A391BED305F001BFDCB /* LanguageHelpers */,
+				65873AAB1BEE88DF002ADFA4 /* Sliding Menu */,
+				6569C2611BEBCBF000D8F850 /* Assets.xcassets */,
+				6569C2631BEBCBF000D8F850 /* LaunchScreen.storyboard */,
+				6569C2661BEBCBF000D8F850 /* Info.plist */,
+				6569C2A01BEBF52900D8F850 /* Realm.framework */,
+				6569C2A11BEBF52900D8F850 /* RealmSwift.framework */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		6569C2841BEBED9900D8F850 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6569C2861BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.h */,
+				6569C2871BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m */,
+				6569C2881BEBEDAB00D8F850 /* ECSlidingAnimationController.h */,
+				6569C2891BEBEDAB00D8F850 /* ECSlidingAnimationController.m */,
+				6569C28A1BEBEDAB00D8F850 /* ECSlidingConstants.h */,
+				6569C28B1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.h */,
+				6569C28C1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m */,
+				6569C28D1BEBEDAB00D8F850 /* ECSlidingSegue.h */,
+				6569C28E1BEBEDAB00D8F850 /* ECSlidingSegue.m */,
+				6569C28F1BEBEDAB00D8F850 /* ECSlidingViewController.h */,
+				6569C2901BEBEDAB00D8F850 /* ECSlidingViewController.m */,
+				6569C2911BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.h */,
+				6569C2921BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m */,
+				6569C2851BEBEDAA00D8F850 /* Language-Bridging-Header.h */,
+			);
+			name = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		6569C29B1BEBF07C00D8F850 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				6569C2991BEBF07100D8F850 /* ChineseViewController.swift */,
+				65AA9FDF1BEC4CCF0050A01A /* KoreanViewController.swift */,
+				6569C26C1BEBE65200D8F850 /* TermCell.swift */,
+				65CF4A331BEC4DDA001BFDCB /* TermDetailViewController.swift */,
+				65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */,
+			);
+			name = Language;
+			sourceTree = "<group>";
+		};
+		65873AAB1BEE88DF002ADFA4 /* Sliding Menu */ = {
+			isa = PBXGroup;
+			children = (
+				6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */,
+				65873AAE1BEE8910002ADFA4 /* MenuCell.swift */,
+				6569C2841BEBED9900D8F850 /* ECSlidingViewController */,
+			);
+			name = "Sliding Menu";
+			sourceTree = "<group>";
+		};
+		65873AB01BEE9715002ADFA4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */,
+				658AF8F11BEEC037000CDC32 /* SelectDefaultLanguageViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		658760161BF6C7560099A7E2 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				658760191BF6D1D10099A7E2 /* QuizPreferencesViewController.swift */,
+				6587601B1BF6DA8C0099A7E2 /* QuizViewController.swift */,
+				6587601D1BF7D7E80099A7E2 /* Question.swift */,
+				65C4148A1BF7EB9700ADF3BF /* QuizResultsViewController.swift */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		65CF4A391BED305F001BFDCB /* LanguageHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				6569C29E1BEBF4F500D8F850 /* Term.swift */,
+				6569C2A71BEBF9AA00D8F850 /* Functions.swift */,
+				65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */,
+			);
+			name = LanguageHelpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6569C2561BEBCBF000D8F850 /* Language */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6569C2691BEBCBF000D8F850 /* Build configuration list for PBXNativeTarget "Language" */;
+			buildPhases = (
+				6569C2531BEBCBF000D8F850 /* Sources */,
+				6569C2541BEBCBF000D8F850 /* Frameworks */,
+				6569C2551BEBCBF000D8F850 /* Resources */,
+				6569C2A61BEBF52900D8F850 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Language;
+			productName = Language;
+			productReference = 6569C2571BEBCBF000D8F850 /* Language.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6569C24F1BEBCBEF00D8F850 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Dannical;
+				TargetAttributes = {
+					6569C2561BEBCBF000D8F850 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 6569C2521BEBCBEF00D8F850 /* Build configuration list for PBXProject "Language" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6569C24E1BEBCBEF00D8F850;
+			productRefGroup = 6569C2581BEBCBF000D8F850 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6569C2561BEBCBF000D8F850 /* Language */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6569C2551BEBCBF000D8F850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6569C2651BEBCBF000D8F850 /* LaunchScreen.storyboard in Resources */,
+				6569C2621BEBCBF000D8F850 /* Assets.xcassets in Resources */,
+				6569C2601BEBCBF000D8F850 /* Main.storyboard in Resources */,
+				65C414891BF7DF4500ADF3BF /* Quiz.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6569C2531BEBCBF000D8F850 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6569C26D1BEBE65200D8F850 /* TermCell.swift in Sources */,
+				658AF8F21BEEC037000CDC32 /* SelectDefaultLanguageViewController.swift in Sources */,
+				6569C29D1BEBF0B600D8F850 /* MenuViewController.swift in Sources */,
+				65873AAF1BEE8910002ADFA4 /* MenuCell.swift in Sources */,
+				6569C2981BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m in Sources */,
+				6569C29A1BEBF07100D8F850 /* ChineseViewController.swift in Sources */,
+				6569C2951BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m in Sources */,
+				6569C29F1BEBF4F500D8F850 /* Term.swift in Sources */,
+				6569C2961BEBEDAB00D8F850 /* ECSlidingSegue.m in Sources */,
+				6587601E1BF7D7E80099A7E2 /* Question.swift in Sources */,
+				65CF4A381BECFD07001BFDCB /* NewTermViewController.swift in Sources */,
+				6569C25B1BEBCBF000D8F850 /* AppDelegate.swift in Sources */,
+				6587601A1BF6D1D10099A7E2 /* QuizPreferencesViewController.swift in Sources */,
+				65CF4A361BEC5A01001BFDCB /* SettingsViewController.swift in Sources */,
+				65CF4A3B1BED3086001BFDCB /* NetworkManager.swift in Sources */,
+				65AA9FE01BEC4CCF0050A01A /* KoreanViewController.swift in Sources */,
+				6587601C1BF6DA8C0099A7E2 /* QuizViewController.swift in Sources */,
+				65CF4A341BEC4DDA001BFDCB /* TermDetailViewController.swift in Sources */,
+				65C4148B1BF7EB9700ADF3BF /* QuizResultsViewController.swift in Sources */,
+				6569C2971BEBEDAB00D8F850 /* ECSlidingViewController.m in Sources */,
+				6569C2941BEBEDAB00D8F850 /* ECSlidingAnimationController.m in Sources */,
+				6569C2931BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				6569C2A81BEBF9AA00D8F850 /* Functions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6569C25E1BEBCBF000D8F850 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6569C25F1BEBCBF000D8F850 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6569C2631BEBCBF000D8F850 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6569C2641BEBCBF000D8F850 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6569C2671BEBCBF000D8F850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6569C2681BEBCBF000D8F850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6569C26A1BEBCBF000D8F850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Language/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dannical.Language;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Language/Language-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6569C26B1BEBCBF000D8F850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Language/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dannical.Language;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Language/Language-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6569C2521BEBCBEF00D8F850 /* Build configuration list for PBXProject "Language" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6569C2671BEBCBF000D8F850 /* Debug */,
+				6569C2681BEBCBF000D8F850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6569C2691BEBCBF000D8F850 /* Build configuration list for PBXNativeTarget "Language" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6569C26A1BEBCBF000D8F850 /* Debug */,
+				6569C26B1BEBCBF000D8F850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6569C24F1BEBCBEF00D8F850 /* Project object */;
+}

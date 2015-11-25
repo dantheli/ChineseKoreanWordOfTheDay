@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoNoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="a1W-qr-L8n">
+                                <rect key="frame" x="70" y="194" width="180" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="bwa-ys-ieU"/>
+                                    <constraint firstAttribute="height" constant="500" id="isq-B1-Ab8"/>
+                                    <constraint firstAttribute="width" secondItem="a1W-qr-L8n" secondAttribute="height" multiplier="1:1" id="ynL-8h-H7e"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bwa-ys-ieU"/>
+                                        <exclude reference="isq-B1-Ab8"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.31484522035608964" green="0.54782188983446445" blue="0.81824801419258808" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="a1W-qr-L8n" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="2xK-fg-e9c"/>
+                            <constraint firstItem="a1W-qr-L8n" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="50k-PO-UPK"/>
+                            <constraint firstItem="a1W-qr-L8n" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fr9-gO-HJc"/>
+                            <constraint firstAttribute="trailing" secondItem="a1W-qr-L8n" secondAttribute="trailing" constant="70" id="mD4-dq-LdF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2xK-fg-e9c"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoNoBackground" width="1024" height="1024"/>
+    </resources>
+</document>
