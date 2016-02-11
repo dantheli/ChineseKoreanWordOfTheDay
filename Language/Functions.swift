@@ -8,7 +8,7 @@
 
 import Foundation
 
-let images = [UIImage(named: "chinese"), UIImage(named: "korean"), nil, UIImage(named: "gear")]
+var images = [UIImage(named: "chinese"), UIImage(named: "korean"), nil, UIImage(named: "gear")]
 var titles = ["Chinese", "Korean", "Quiz", "Settings"]
 let identifiers = ["ChineseNavigationController", "KoreanNavigationController"]
 

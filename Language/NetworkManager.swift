@@ -13,7 +13,7 @@ import RealmSwift
 let DateStringFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z'"
 
 // HTTP REST API URLs
-let DOMAIN = "http://www.somedomain.com"
+let DOMAIN = "http://ckwordoftheday.njay.net"
 let GETURL = "/words/fetch_new/"
 let POSTURL = "/words.json"
 

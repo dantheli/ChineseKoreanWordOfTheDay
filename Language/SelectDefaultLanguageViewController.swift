@@ -35,12 +35,10 @@ class SelectDefaultLanguageViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 2
     }
 
@@ -60,6 +58,7 @@ class SelectDefaultLanguageViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath != selectedIndex {
             swap(&titles[0], &titles[1])
+            swap(&images[0], &images[1])
         }
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(identifiers[indexPath.row], forKey: "topIdentifier")

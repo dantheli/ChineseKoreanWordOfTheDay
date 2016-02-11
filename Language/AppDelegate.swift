@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let identifier = defaults.objectForKey("topIdentifier") as? String {
             if identifier != identifiers[0] {
                 swap(&titles[0], &titles[1])
+                swap(&images[0], &images[1])
             }
         }
         

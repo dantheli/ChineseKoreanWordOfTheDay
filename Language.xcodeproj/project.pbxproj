@@ -21,10 +21,6 @@
 		6569C29A1BEBF07100D8F850 /* ChineseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2991BEBF07100D8F850 /* ChineseViewController.swift */; };
 		6569C29D1BEBF0B600D8F850 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */; };
 		6569C29F1BEBF4F500D8F850 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C29E1BEBF4F500D8F850 /* Term.swift */; };
-		6569C2A21BEBF52900D8F850 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A01BEBF52900D8F850 /* Realm.framework */; };
-		6569C2A31BEBF52900D8F850 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A01BEBF52900D8F850 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6569C2A41BEBF52900D8F850 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A11BEBF52900D8F850 /* RealmSwift.framework */; };
-		6569C2A51BEBF52900D8F850 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6569C2A11BEBF52900D8F850 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6569C2A81BEBF9AA00D8F850 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2A71BEBF9AA00D8F850 /* Functions.swift */; };
 		65873AAF1BEE8910002ADFA4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65873AAE1BEE8910002ADFA4 /* MenuCell.swift */; };
 		6587601A1BF6D1D10099A7E2 /* QuizPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658760191BF6D1D10099A7E2 /* QuizPreferencesViewController.swift */; };
@@ -38,6 +34,7 @@
 		65CF4A361BEC5A01001BFDCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */; };
 		65CF4A381BECFD07001BFDCB /* NewTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */; };
 		65CF4A3B1BED3086001BFDCB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */; };
+		A4A464286433E65D78D1E895 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E46E46103216D5FC906EAC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,8 +44,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6569C2A51BEBF52900D8F850 /* RealmSwift.framework in Embed Frameworks */,
-				6569C2A31BEBF52900D8F850 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2255A4891FD8D766A39A01FF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		48E46E46103216D5FC906EAC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6569C2571BEBCBF000D8F850 /* Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Language.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6569C25A1BEBCBF000D8F850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6569C25F1BEBCBF000D8F850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,8 +77,6 @@
 		6569C2991BEBF07100D8F850 /* ChineseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseViewController.swift; sourceTree = "<group>"; };
 		6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6569C29E1BEBF4F500D8F850 /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
-		6569C2A01BEBF52900D8F850 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Realm.framework; sourceTree = "<group>"; };
-		6569C2A11BEBF52900D8F850 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../RealmSwift.framework; sourceTree = "<group>"; };
 		6569C2A71BEBF9AA00D8F850 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		65873AAE1BEE8910002ADFA4 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		658760191BF6D1D10099A7E2 /* QuizPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +90,7 @@
 		65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTermViewController.swift; sourceTree = "<group>"; };
 		65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DF71C599CE581D0D1671BB4A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6569C2A41BEBF52900D8F850 /* RealmSwift.framework in Frameworks */,
-				6569C2A21BEBF52900D8F850 /* Realm.framework in Frameworks */,
+				A4A464286433E65D78D1E895 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +110,8 @@
 			children = (
 				6569C2591BEBCBF000D8F850 /* Language */,
 				6569C2581BEBCBF000D8F850 /* Products */,
+				EFACB85740F6CD5F1DE020A3 /* Pods */,
+				7B50E9EBD893B2FA14961CBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,8 +137,6 @@
 				6569C2611BEBCBF000D8F850 /* Assets.xcassets */,
 				6569C2631BEBCBF000D8F850 /* LaunchScreen.storyboard */,
 				6569C2661BEBCBF000D8F850 /* Info.plist */,
-				6569C2A01BEBF52900D8F850 /* Realm.framework */,
-				6569C2A11BEBF52900D8F850 /* RealmSwift.framework */,
 			);
 			path = Language;
 			sourceTree = "<group>";
@@ -219,6 +214,23 @@
 			name = LanguageHelpers;
 			sourceTree = "<group>";
 		};
+		7B50E9EBD893B2FA14961CBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48E46E46103216D5FC906EAC /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFACB85740F6CD5F1DE020A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2255A4891FD8D766A39A01FF /* Pods.debug.xcconfig */,
+				DF71C599CE581D0D1671BB4A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,10 +238,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6569C2691BEBCBF000D8F850 /* Build configuration list for PBXNativeTarget "Language" */;
 			buildPhases = (
+				F3E8ABBB51E4720F47D003A8 /* Check Pods Manifest.lock */,
 				6569C2531BEBCBF000D8F850 /* Sources */,
 				6569C2541BEBCBF000D8F850 /* Frameworks */,
 				6569C2551BEBCBF000D8F850 /* Resources */,
 				6569C2A61BEBF52900D8F850 /* Embed Frameworks */,
+				1E61545E3950623AD50062C6 /* Embed Pods Frameworks */,
+				F09681472CF64AADE45F2E17 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +267,7 @@
 				TargetAttributes = {
 					6569C2561BEBCBF000D8F850 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = RNCTC44528;
 					};
 				};
 			};
@@ -286,6 +302,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E61545E3950623AD50062C6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F09681472CF64AADE45F2E17 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3E8ABBB51E4720F47D003A8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6569C2531BEBCBF000D8F850 /* Sources */ = {
@@ -423,9 +487,12 @@
 		};
 		6569C26A1BEBCBF000D8F850 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2255A4891FD8D766A39A01FF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -434,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dannical.Language;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Language/Language-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -441,9 +509,12 @@
 		};
 		6569C26B1BEBCBF000D8F850 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF71C599CE581D0D1671BB4A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -452,6 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dannical.Language;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Language/Language-Bridging-Header.h";
 			};
 			name = Release;
