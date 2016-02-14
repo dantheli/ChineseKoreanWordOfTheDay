@@ -1,17 +1,24 @@
 //
-//  ChineseViewController.swift
+//  TermViewController.swift
 //  Language
 //
-//  Created by Daniel Li on 11/5/15.
-//  Copyright © 2015 Dannical. All rights reserved.
+//  Created by Daniel Li on 2/13/16.
+//  Copyright © 2016 Dannical. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class ChineseViewController: UITableViewController {
+class TermViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var currentLanguage: String!
     
     var terms = [Term]()
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var refreshControl: UIRefreshControl!
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -24,15 +31,35 @@ class ChineseViewController: UITableViewController {
         
         // Remove empty cell separators
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 100.0
+        
+        refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         
-        realmToModel()
-        checkEmpty()
+        getTerms()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        if currentLanguage == nil {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let language = defaults.stringForKey("languageKey") {
+                currentLanguage = language
+            } else {
+                currentLanguage = languageKeys[0]
+                defaults.setObject(languageKeys[0], forKey: "languageKey")
+            }
+        }
+        
+        title = currentLanguage
+        
+        realmToModel()
         
         navigationController!.view.addGestureRecognizer(slidingViewController().panGesture)
         slidingViewController().topViewAnchoredGesture = [.Tapping, .Panning]
@@ -40,7 +67,6 @@ class ChineseViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -76,6 +102,10 @@ class ChineseViewController: UITableViewController {
     }
     
     func handleRefresh(refreshControl: UIRefreshControl) {
+        getTerms()
+    }
+    
+    func getTerms() {
         NetworkManager.getNewTerms({ (data, error) in
             
             if error != nil {
@@ -108,7 +138,6 @@ class ChineseViewController: UITableViewController {
                             }
                         })
                         self.refreshControl?.endRefreshing()
-                        self.checkEmpty()
                     })
                 } catch {
                     dispatch_async(dispatch_get_main_queue(), {
@@ -122,27 +151,33 @@ class ChineseViewController: UITableViewController {
     
     func realmToModel() {
         let realm = try! Realm()
-        terms = realm.objects(Term).filter( { $0.language == "chinese" }).sort({ $0.termDate > $1.termDate })
+        terms = realm.objects(Term).filter( { $0.language == currentLanguage.lowercaseString }).sort({ $0.termDate > $1.termDate })
+        checkEmpty()
+        print(terms.count)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return terms.count
     }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("termCell", forIndexPath: indexPath) as! TermCell
-        cell.languageLabel.text = terms[indexPath.row].chinese
+        if currentLanguage == "Chinese" {
+            cell.languageLabel.text = terms[indexPath.row].chinese
+        } else {
+            cell.languageLabel.text = terms[indexPath.row].korean
+        }
         cell.romanizationLabel.text = terms[indexPath.row].romanization
         
         cell.englishLabel.text = terms[indexPath.row].english
@@ -205,7 +240,7 @@ class ChineseViewController: UITableViewController {
         }
         if segue.identifier == "newTerm" {
             if let destination = (segue.destinationViewController as! UINavigationController).topViewController as? NewTermViewController {
-                destination.language = "Chinese"
+                destination.language = currentLanguage
             }
         }
     }

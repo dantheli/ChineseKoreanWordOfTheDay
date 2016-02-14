@@ -69,7 +69,9 @@ class MenuViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if let destination = (segue.destinationViewController as! UINavigationController).topViewController as? TermViewController {
+            destination.currentLanguage = titles[selectedIndex]
+        }
     }
 
 }

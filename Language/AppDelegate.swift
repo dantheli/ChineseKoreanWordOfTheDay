@@ -17,49 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let identifier = defaults.objectForKey("topIdentifier") as? String {
-            if identifier != identifiers[0] {
+        if let languageKey = defaults.objectForKey("languageKey") as? String {
+            if languageKey != languageKeys[0] {
                 swap(&titles[0], &titles[1])
                 swap(&images[0], &images[1])
             }
         }
         
-        /*
-        // Examples
-        let term = Term()
-        term.language = "chinese"
-        term.chinese = "你好"
-        term.romanization = "ní hǎo"
-        term.english = "Hello"
-        term.formality = ""
-        term.termDate = NSDate()
-        
-        let term1 = Term()
-        term1.language = "korean"
-        term1.korean = "안녕"
-        term1.romanization = "annyeong"
-        term1.english = "Hello"
-        term1.formality = "Informal"
-        term1.termDate = NSDate().dateByAddingTimeInterval(-1*24*60*60)
-        
-        let term2 = Term()
-        term2.language = "korean"
-        term2.korean = "안녕히 가세요"
-        term2.romanization = "annyeonghi gaseyo"
-        term2.english = "Goodbye"
-        term2.formality = "Formal"
-        term2.termDate = NSDate().dateByAddingTimeInterval(-2*24*60*60)
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
-            realm.add(term)
-            realm.add(term1)
-            realm.add(term2)
-        }
-        
-        print(try! Realm().objects(Term))
-        */
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().barTintColor = UIColor(red: 52/255, green: 111/255, blue: 199/255, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]

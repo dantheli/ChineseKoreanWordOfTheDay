@@ -27,8 +27,8 @@ class SettingsViewController: UITableViewController {
         slidingViewController().topViewAnchoredGesture = [.Tapping, .Panning]
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let identifier = defaults.objectForKey("topIdentifier") as? String {
-            if identifier == "ChineseNavigationController" {
+        if let languageKey = defaults.objectForKey("languageKey") as? String {
+            if languageKey == "Chinese" {
                 languageLabel.text = "Chinese"
             } else {
                 languageLabel.text = "Korean"

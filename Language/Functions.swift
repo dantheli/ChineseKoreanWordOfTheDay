@@ -10,7 +10,7 @@ import Foundation
 
 var images = [UIImage(named: "chinese"), UIImage(named: "korean"), nil, UIImage(named: "gear")]
 var titles = ["Chinese", "Korean", "Quiz", "Settings"]
-let identifiers = ["ChineseNavigationController", "KoreanNavigationController"]
+var languageKeys = ["Chinese", "Korean"]
 
 // Trim duplicates from a sequence without affecting order
 func uniq<S : SequenceType, T : Hashable where S.Generator.Element == T>(source: S) -> [T] {

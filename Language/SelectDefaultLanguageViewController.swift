@@ -11,13 +11,12 @@ import UIKit
 class SelectDefaultLanguageViewController: UITableViewController {
 
     var selectedIndex: Int!
-    let languages = ["Chinese", "Korean"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let identifier = defaults.objectForKey("topIdentifier") as? String {
-            if identifier == identifiers[1] {
+        if let languageKey = defaults.objectForKey("languageKey") as? String {
+            if languageKey == languageKeys[1] {
                 selectedIndex = 1
             } else {
                 selectedIndex = 0
@@ -45,7 +44,7 @@ class SelectDefaultLanguageViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("languageCell", forIndexPath: indexPath)
 
-        cell.textLabel?.text = languages[indexPath.row]
+        cell.textLabel?.text = languageKeys[indexPath.row]
         if indexPath.row == selectedIndex {
             cell.accessoryType = .Checkmark
         } else {
@@ -61,7 +60,7 @@ class SelectDefaultLanguageViewController: UITableViewController {
             swap(&images[0], &images[1])
         }
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(identifiers[indexPath.row], forKey: "topIdentifier")
+        defaults.setObject(languageKeys[indexPath.row], forKey: "languageKey")
         
         let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: selectedIndex, inSection: 0))
         cell?.accessoryType = .None

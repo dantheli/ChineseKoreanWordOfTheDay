@@ -114,12 +114,6 @@
 #pragma mark - UIViewController
 
 - (void)awakeFromNib {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.topViewControllerStoryboardId = [defaults stringForKey:@"topIdentifier"];
-    if (!self.topViewControllerStoryboardId) {
-        self.topViewControllerStoryboardId = @"ChineseNavigationController";
-    }
-    NSLog(@"%@", self.topViewControllerStoryboardId);
     if (self.topViewControllerStoryboardId) {
         self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.topViewControllerStoryboardId];
     }
