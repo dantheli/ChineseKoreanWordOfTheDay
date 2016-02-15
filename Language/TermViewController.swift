@@ -40,8 +40,6 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl?.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
-        
-        getTerms()
     }
     
     override func viewWillAppear(animated: Bool) {
