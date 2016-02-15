@@ -153,7 +153,6 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let realm = try! Realm()
         terms = realm.objects(Term).filter( { $0.language == currentLanguage.lowercaseString }).sort({ $0.termDate > $1.termDate })
         checkEmpty()
-        print(terms.count)
     }
     
     override func didReceiveMemoryWarning() {
@@ -229,6 +228,19 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func cancelledNewTerm(segue: UIStoryboardSegue) {    }
+    
+    @IBAction func deletedTerm(segue: UIStoryboardSegue) {
+        if let source = segue.sourceViewController as? TermDetailViewController {
+            let index = terms.indexOf({ $0.id == source.term.id })!
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(source.term)
+            }
+            realmToModel()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {

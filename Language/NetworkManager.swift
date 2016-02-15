@@ -13,9 +13,10 @@ import RealmSwift
 let DateStringFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z'"
 
 // HTTP REST API URLs
-let DOMAIN = "http://ckwordoftheday.njay.net"
-let GETURL = "/words/fetch_new/"
-let POSTURL = "/words.json"
+let DOMAIN = "http://ckwordoftheday.njay.net/"
+let GETTERMSURL = "words/fetch_new/"
+let POSTTERMURL = "words.json"
+let DELETETERMURL = "words/"
 
 class NetworkManager {
     class func getNewTerms(completionHandler: (data: NSData?, error: NSError?) -> Void) {
@@ -32,7 +33,7 @@ class NetworkManager {
         } else {
             id = "-1"
         }
-        let request = NSMutableURLRequest(URL: NSURL(string: DOMAIN + GETURL + id)!)
+        let request = NSMutableURLRequest(URL: NSURL(string: DOMAIN + GETTERMSURL + id)!)
         request.HTTPMethod = "GET"
         
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
@@ -49,11 +50,11 @@ class NetworkManager {
     class func postNewTerm(termToPost: Term, completionHandler: (data: NSData?, error: NSError?) -> Void) {
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.timeoutIntervalForResource = 3.0
+        configuration.timeoutIntervalForResource = 5.0
         
         let session = NSURLSession(configuration: configuration)
         
-        let request = NSMutableURLRequest(URL: NSURL(string: DOMAIN + POSTURL)!)
+        let request = NSMutableURLRequest(URL: NSURL(string: DOMAIN + POSTTERMURL)!)
         request.HTTPMethod = "POST"
         
         var bodyData = "word[language]=" + termToPost.language
@@ -75,6 +76,25 @@ class NetworkManager {
             }
             completionHandler(data: data, error: nil)
         })
+        dataTask.resume()
+    }
+    
+    class func deleteTerm(termToDelete: Term, completionHandler: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.timeoutIntervalForResource = 3.0
+        
+        let session = NSURLSession(configuration: configuration)
+        
+        let requestURL = NSURL(string: DOMAIN + DELETETERMURL + termToDelete.id! + ".json")!
+        let request = NSMutableURLRequest(URL: requestURL)
+        request.HTTPMethod = "DELETE"
+        
+        let dataTask = session.dataTaskWithRequest(request) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            completionHandler(data: data, response: response, error: error)
+        }
         dataTask.resume()
     }
 }

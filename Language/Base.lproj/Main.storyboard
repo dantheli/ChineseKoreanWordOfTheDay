@@ -98,12 +98,12 @@
                                                     <exclude reference="D4P-4h-dhk"/>
                                                     <exclude reference="iDk-Hc-iXr"/>
                                                     <exclude reference="rBE-W5-PRK"/>
-                                                    <exclude reference="I7J-Jd-JsA"/>
                                                     <exclude reference="CX2-2K-EdF"/>
+                                                    <exclude reference="I7J-Jd-JsA"/>
                                                     <exclude reference="4k5-jR-V5l"/>
                                                     <exclude reference="Bky-0n-JTP"/>
-                                                    <exclude reference="bhR-bE-A2q"/>
                                                     <exclude reference="Vdm-FE-uJN"/>
+                                                    <exclude reference="bhR-bE-A2q"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -505,7 +505,13 @@
                             <constraint firstItem="aK8-Ng-6Rf" firstAttribute="top" secondItem="4Z1-fF-51l" secondAttribute="top" id="wmq-1j-UCU"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="zWQ-BR-I55">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Y5u-iE-1q9">
+                            <connections>
+                                <action selector="deleteButton:" destination="xwl-Ar-fWI" id="a4L-vE-qHu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
@@ -514,9 +520,11 @@
                         <outlet property="formalityLabel" destination="2q3-79-Wmq" id="XWU-Vn-Rna"/>
                         <outlet property="languageLabel" destination="kaJ-32-u6t" id="wlp-Yn-aft"/>
                         <outlet property="romanizationLabel" destination="gaK-QG-lCe" id="qUy-IZ-xSS"/>
+                        <segue destination="SBK-Sm-OFw" kind="unwind" identifier="deletedTerm" unwindAction="deletedTerm:" id="BNA-ef-1s3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAl-uk-RkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SBK-Sm-OFw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2593" y="-614"/>
         </scene>
@@ -686,7 +694,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="PAF-Tn-Q3r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="languageCell" textLabel="wj1-o2-Wmz" style="IBUITableViewCellStyleDefault" id="IGS-ja-uNr">
                                 <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
@@ -699,7 +707,7 @@
                                             <rect key="frame" x="15" y="0.0" width="266" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1070,7 +1078,7 @@ Possible Features:
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="JkS-p4-9jW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="m7m-UC-vEx">
                                 <cells>
