@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TermViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TermViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate {
     
     var currentLanguage: String!
     
@@ -40,6 +40,11 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl?.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
+        
+        // Verify 3D Touch
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: view)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,6 +76,8 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidAppear(true)
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
     }
+    
+    // Data
     
     func checkEmpty() {
         if terms.isEmpty {
@@ -157,6 +164,7 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
     }
     
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -194,6 +202,8 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    // Error Messages
+    
     func alertJSONError() {
         let alertController = UIAlertController(title: "A JSON Error Occurred", message: "Please pray for a fix.", preferredStyle: .Alert)
         let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -208,14 +218,37 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    // 3D Touch methods
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let tableViewPoint = view.convertPoint(location, toView: tableView)
+        
+        guard let indexPath = tableView.indexPathForRowAtPoint(tableViewPoint),
+            cell = tableView.cellForRowAtIndexPath(indexPath) else { return nil }
+        
+        guard let peekViewController = storyboard?.instantiateViewControllerWithIdentifier("TermDetailViewController") as? TermDetailViewController else { return nil }
+        
+        peekViewController.term = terms[indexPath.row]
+        
+        peekViewController.preferredContentSize = CGSize(width: 0.0, height: 0.0)
+        
+        let tableViewFrame = view.convertRect(cell.frame, fromView: tableView)
+        previewingContext.sourceRect = tableViewFrame
+        
+        return peekViewController
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        showViewController(viewControllerToCommit, sender: self)
+    }
+    
     // MARK: - Navigation
     
     @IBAction func addedNewTerm(segue: UIStoryboardSegue) {
         if let source = segue.sourceViewController as? NewTermViewController {
             realmToModel()
             
-            let id = source.term.id
-            let index = terms.indexOf({ $0.id == id })
+            let index = terms.indexOf({ $0.id == source.term.id })
             
             tableView.beginUpdates()
             tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)], withRowAnimation: .Top)
