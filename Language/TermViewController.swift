@@ -49,7 +49,6 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if traitCollection.forceTouchCapability == .Available {
             registerForPreviewingWithDelegate(self, sourceView: view)
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -176,7 +175,12 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         cell.romanizationLabel.text = terms[indexPath.row].romanization
         
-        cell.englishLabel.text = terms[indexPath.row].english
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.boolForKey("hideEnglish") {
+            cell.englishLabel.text = ""
+        } else {
+            cell.englishLabel.text = terms[indexPath.row].english
+        }
         cell.formalityLabel.text = terms[indexPath.row].formality
         
         if NSCalendar.currentCalendar().isDateInToday(terms[indexPath.row].termDate) {

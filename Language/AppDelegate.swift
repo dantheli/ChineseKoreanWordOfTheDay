@@ -16,12 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Set default language at startup
         let defaults = NSUserDefaults.standardUserDefaults()
         if let languageKey = defaults.objectForKey("languageKey") as? String {
             if languageKey != languageKeys[0] {
                 swap(&titles[0], &titles[1])
                 swap(&images[0], &images[1])
             }
+        }
+        
+        // If doesn't exist or is false, make/keep false
+        if !defaults.boolForKey("hideEnglish") {
+            defaults.setBool(false, forKey: "hideEnglish")
         }
         
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()

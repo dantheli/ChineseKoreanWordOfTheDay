@@ -12,6 +12,12 @@ import ECSlidingViewController
 
 class SettingsViewController: UITableViewController {
 
+    
+    @IBOutlet weak var englishSwitch: UISwitch!
+    @IBAction func englishSwitch(sender: UISwitch) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(sender.on, forKey: "hideEnglish")
+    }
     @IBOutlet weak var deleteLabel: UILabel!
     @IBOutlet weak var deleteCell: UITableViewCell!
     
@@ -20,6 +26,9 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDeleteCell()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        englishSwitch.on = defaults.boolForKey("hideEnglish")
     }
     
     override func viewWillAppear(animated: Bool) {
