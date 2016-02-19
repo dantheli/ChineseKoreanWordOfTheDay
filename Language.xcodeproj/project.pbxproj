@@ -31,7 +31,7 @@
 		65CF4A341BEC4DDA001BFDCB /* TermDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A331BEC4DDA001BFDCB /* TermDetailViewController.swift */; };
 		65CF4A361BEC5A01001BFDCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */; };
 		65CF4A381BECFD07001BFDCB /* NewTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */; };
-		65CF4A3B1BED3086001BFDCB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */; };
+		65CF4A3B1BED3086001BFDCB /* TermManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4A3A1BED3086001BFDCB /* TermManager.swift */; };
 		65FABBBD1C6FDFD900C03F6C /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FABBBC1C6FDFD900C03F6C /* TermViewController.swift */; };
 		A4A464286433E65D78D1E895 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E46E46103216D5FC906EAC /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -86,7 +86,7 @@
 		65CF4A331BEC4DDA001BFDCB /* TermDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermDetailViewController.swift; sourceTree = "<group>"; };
 		65CF4A351BEC5A01001BFDCB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		65CF4A371BECFD07001BFDCB /* NewTermViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTermViewController.swift; sourceTree = "<group>"; };
-		65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		65CF4A3A1BED3086001BFDCB /* TermManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermManager.swift; sourceTree = "<group>"; };
 		65FABBBC1C6FDFD900C03F6C /* TermViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
 		DF71C599CE581D0D1671BB4A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,7 +206,7 @@
 			children = (
 				6569C29E1BEBF4F500D8F850 /* Term.swift */,
 				6569C2A71BEBF9AA00D8F850 /* Functions.swift */,
-				65CF4A3A1BED3086001BFDCB /* NetworkManager.swift */,
+				65CF4A3A1BED3086001BFDCB /* TermManager.swift */,
 			);
 			name = LanguageHelpers;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 				6569C25B1BEBCBF000D8F850 /* AppDelegate.swift in Sources */,
 				6587601A1BF6D1D10099A7E2 /* QuizPreferencesViewController.swift in Sources */,
 				65CF4A361BEC5A01001BFDCB /* SettingsViewController.swift in Sources */,
-				65CF4A3B1BED3086001BFDCB /* NetworkManager.swift in Sources */,
+				65CF4A3B1BED3086001BFDCB /* TermManager.swift in Sources */,
 				6587601C1BF6DA8C0099A7E2 /* QuizViewController.swift in Sources */,
 				65CF4A341BEC4DDA001BFDCB /* TermDetailViewController.swift in Sources */,
 				65FABBBD1C6FDFD900C03F6C /* TermViewController.swift in Sources */,

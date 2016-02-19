@@ -29,66 +29,29 @@ class NewTermViewController: UITableViewController {
         term.english = englishTextField.text!
         term.termDate = datePicker.date
         
-        NetworkManager.getNewTerms({ (data, error) in
+        TermManager.getNewTerms({ (error) in
             if error != nil {
-                dispatch_async(dispatch_get_main_queue(), {
+                dispatch_async(dispatch_get_main_queue()) {
                     self.alertNetworkError(error!.code)
-                })
+                }
                 return
             }
             
-            if let dataFromNetworking = data {
-                do {
-                    let jsonArray = try NSJSONSerialization.JSONObjectWithData(dataFromNetworking, options: []) as! [NSDictionary]
-                    print(jsonArray)
-                    dispatch_async(dispatch_get_main_queue(), {
-                        let realm = try! Realm()
-                        try! realm.write({
-                            for json in jsonArray {
-                                let term = realm.create(Term.self, value: json, update: true)
-                                let termDateJSON = json["termDateJSON"] as? String
-                                let creationDateJSON = json["created_at"] as? String
-                                let formatter = NSDateFormatter()
-                                formatter.dateFormat = DateStringFormat
-                                formatter.locale = NSLocale.currentLocale()
-                                term.termDate = formatter.dateFromString(termDateJSON!)!
-                                term.creationDate = formatter.dateFromString(creationDateJSON!)!
-                            }
-                        })
-                        
-                        NetworkManager.postNewTerm(self.term, completionHandler: { (data, error) in
-                            if error != nil {
-                                dispatch_async(dispatch_get_main_queue(), {
-                                    self.alertNetworkError(error!.code)
-                                })
-                                return
-                            }
-                            if let dataFromNetworking = data {
-                                do {
-                                    let json = try NSJSONSerialization.JSONObjectWithData(dataFromNetworking, options: []) as! [String]
-                                    self.term.id = json[0]
-                                    let formatter = NSDateFormatter()
-                                    formatter.dateFormat = DateStringFormat
-                                    self.term.creationDate = formatter.dateFromString(json[1])!
-                                    dispatch_async(dispatch_get_main_queue(), {
-                                        let realm = try! Realm()
-                                        try! realm.write {
-                                            realm.add(self.term)
-                                        }
-                                        self.performSegueWithIdentifier("addedNewTerm", sender: self)
-                                    })
-                                } catch {
-                                    return
-                                }
-                            }
-                        })
-                    })
-                } catch {
-                    
+            // Post term
+            TermManager.postTerm(self.term, completionHandler: { (error) in
+                if error != nil {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.alertNetworkError(error!.code)
+                    }
+                    return
                 }
-            }
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("addedNewTerm", sender: self)
+                }
+            })
         })
     }
+    
     @IBAction func cancelButton(sender: UIBarButtonItem) {
         
     }

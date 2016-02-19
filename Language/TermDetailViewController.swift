@@ -21,26 +21,12 @@ class TermDetailViewController: UIViewController {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         let deleteAction = UIAlertAction(title: "Delete Term", style: .Destructive) { Void in
-            NetworkManager.deleteTerm(self.term) { (data, response, error) in
+            TermManager.deleteTerm(self.term) { (error) in
                 if error != nil {
                     self.alertDeletionFail()
                 }
-                if let data = data {
-                    do {
-                        if let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String : Int] {
-                            if json["status"] == 1 {
-                                dispatch_async(dispatch_get_main_queue()) {
-                                    self.performSegueWithIdentifier("deletedTerm", sender: self)
-                                }
-                            } else {
-                                self.alertDeletionFail()
-                            }
-                        } else {
-                            print("json couldn't read")
-                        }
-                    } catch {
-                        
-                    }
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("deletedTerm", sender: self)
                 }
             }
         }

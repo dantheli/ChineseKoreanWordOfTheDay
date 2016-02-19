@@ -15,6 +15,9 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var terms = [Term]()
     
+    var realmTerms: [Term] {
+        return try! Realm().objects(Term).filter( { $0.language == currentLanguage.lowercaseString }).sort({ $0.termDate > $1.termDate })
+    }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +48,7 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if traitCollection.forceTouchCapability == .Available {
             registerForPreviewingWithDelegate(self, sourceView: view)
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,9 +64,9 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        title = currentLanguage
+        terms = realmTerms
         
-        realmToModel()
+        title = currentLanguage
         
         navigationController!.view.addGestureRecognizer(slidingViewController().panGesture)
         slidingViewController().topViewAnchoredGesture = [.Tapping, .Panning]
@@ -111,53 +115,38 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getTerms() {
-        NetworkManager.getNewTerms({ (data, error) in
-            
+        TermManager.getNewTerms({ (error) in
             if error != nil {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.alertConnectionError(error!.code)
-                    self.refreshControl?.endRefreshing()
-                })
-            }
-            
-            if let dataFromNetworking = data {
-                do {
-                    let jsonArray = try NSJSONSerialization.JSONObjectWithData(dataFromNetworking, options: []) as! [NSDictionary]
-                    dispatch_async(dispatch_get_main_queue(), {
-                        let realm = try! Realm()
-                        try! realm.write({
-                            for json in jsonArray {
-                                let term = realm.create(Term.self, value: json, update: true)
-                                let termDateJSON = json["termDateJSON"] as? String
-                                let creationDateJSON = json["created_at"] as? String
-                                let formatter = NSDateFormatter()
-                                formatter.dateFormat = DateStringFormat
-                                formatter.locale = NSLocale.currentLocale()
-                                term.termDate = formatter.dateFromString(termDateJSON!)!
-                                term.creationDate = formatter.dateFromString(creationDateJSON!)!
-                                
-                                self.realmToModel()
-                                if let index = self.terms.indexOf({ $0.id == term.id! }) {
-                                    self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Top)
-                                }
-                            }
-                        })
-                        self.refreshControl?.endRefreshing()
-                    })
-                } catch {
-                    dispatch_async(dispatch_get_main_queue(), {
+                dispatch_async(dispatch_get_main_queue()) {
+                    if error!.code == -100 {
                         self.alertJSONError()
-                        self.refreshControl?.endRefreshing()
-                    })
+                    } else {
+                        self.alertConnectionError(error!.code)
+                    }
+                    self.refreshControl?.endRefreshing()
                 }
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                self.addTermsToTable()
             }
         })
     }
     
-    func realmToModel() {
-        let realm = try! Realm()
-        terms = realm.objects(Term).filter( { $0.language == currentLanguage.lowercaseString }).sort({ $0.termDate > $1.termDate })
-        checkEmpty()
+    func addTermsToTable() {
+        
+        let newTerms = realmTerms
+        var indexPaths = [NSIndexPath]()
+        for term in newTerms {
+            if !terms.contains( { $0.id == term.id } ) {
+                if let index = newTerms.indexOf({ $0.id == term.id! }) {
+                    indexPaths.append(NSIndexPath(forRow: index, inSection: 0))
+                }
+            }
+        }
+        terms = newTerms
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        
+        self.refreshControl?.endRefreshing()
     }
     
     override func didReceiveMemoryWarning() {
@@ -245,30 +234,17 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Navigation
     
     @IBAction func addedNewTerm(segue: UIStoryboardSegue) {
-        if let source = segue.sourceViewController as? NewTermViewController {
-            realmToModel()
-            
-            let index = terms.indexOf({ $0.id == source.term.id })
-            
-            tableView.beginUpdates()
-            tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)], withRowAnimation: .Top)
-            tableView.endUpdates()
-            
-            tableView.reloadData()
+        if segue.identifier == "addedNewTerm" {
+            self.addTermsToTable()
         }
     }
     
     @IBAction func cancelledNewTerm(segue: UIStoryboardSegue) {    }
     
     @IBAction func deletedTerm(segue: UIStoryboardSegue) {
-        if let source = segue.sourceViewController as? TermDetailViewController {
-            let index = terms.indexOf({ $0.id == source.term.id })!
+        if let index = terms.indexOf({ $0.invalidated }) {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            let realm = try! Realm()
-            try! realm.write {
-                realm.delete(source.term)
-            }
-            realmToModel()
+            terms = realmTerms
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
