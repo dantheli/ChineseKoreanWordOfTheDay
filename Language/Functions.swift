@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 var images = [UIImage(named: "chinese"), UIImage(named: "korean"), nil, UIImage(named: "gear")]
 var titles = ["Chinese", "Korean", "Quiz", "Settings"]

@@ -12,12 +12,6 @@
 		6569C2621BEBCBF000D8F850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6569C2611BEBCBF000D8F850 /* Assets.xcassets */; };
 		6569C2651BEBCBF000D8F850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6569C2631BEBCBF000D8F850 /* LaunchScreen.storyboard */; };
 		6569C26D1BEBE65200D8F850 /* TermCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C26C1BEBE65200D8F850 /* TermCell.swift */; };
-		6569C2931BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2871BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m */; };
-		6569C2941BEBEDAB00D8F850 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2891BEBEDAB00D8F850 /* ECSlidingAnimationController.m */; };
-		6569C2951BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C28C1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m */; };
-		6569C2961BEBEDAB00D8F850 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C28E1BEBEDAB00D8F850 /* ECSlidingSegue.m */; };
-		6569C2971BEBEDAB00D8F850 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2901BEBEDAB00D8F850 /* ECSlidingViewController.m */; };
-		6569C2981BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2921BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m */; };
 		6569C29D1BEBF0B600D8F850 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */; };
 		6569C29F1BEBF4F500D8F850 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C29E1BEBF4F500D8F850 /* Term.swift */; };
 		6569C2A81BEBF9AA00D8F850 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6569C2A71BEBF9AA00D8F850 /* Functions.swift */; };
@@ -59,20 +53,6 @@
 		6569C2641BEBCBF000D8F850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6569C2661BEBCBF000D8F850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6569C26C1BEBE65200D8F850 /* TermCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermCell.swift; sourceTree = "<group>"; };
-		6569C2851BEBEDAA00D8F850 /* Language-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Language-Bridging-Header.h"; sourceTree = "<group>"; };
-		6569C2861BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
-		6569C2871BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
-		6569C2881BEBEDAB00D8F850 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
-		6569C2891BEBEDAB00D8F850 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
-		6569C28A1BEBEDAB00D8F850 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
-		6569C28B1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
-		6569C28C1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
-		6569C28D1BEBEDAB00D8F850 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
-		6569C28E1BEBEDAB00D8F850 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
-		6569C28F1BEBEDAB00D8F850 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
-		6569C2901BEBEDAB00D8F850 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
-		6569C2911BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
-		6569C2921BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6569C29E1BEBF4F500D8F850 /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 		6569C2A71BEBF9AA00D8F850 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -139,27 +119,6 @@
 			path = Language;
 			sourceTree = "<group>";
 		};
-		6569C2841BEBED9900D8F850 /* ECSlidingViewController */ = {
-			isa = PBXGroup;
-			children = (
-				6569C2861BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.h */,
-				6569C2871BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m */,
-				6569C2881BEBEDAB00D8F850 /* ECSlidingAnimationController.h */,
-				6569C2891BEBEDAB00D8F850 /* ECSlidingAnimationController.m */,
-				6569C28A1BEBEDAB00D8F850 /* ECSlidingConstants.h */,
-				6569C28B1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.h */,
-				6569C28C1BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m */,
-				6569C28D1BEBEDAB00D8F850 /* ECSlidingSegue.h */,
-				6569C28E1BEBEDAB00D8F850 /* ECSlidingSegue.m */,
-				6569C28F1BEBEDAB00D8F850 /* ECSlidingViewController.h */,
-				6569C2901BEBEDAB00D8F850 /* ECSlidingViewController.m */,
-				6569C2911BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.h */,
-				6569C2921BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m */,
-				6569C2851BEBEDAA00D8F850 /* Language-Bridging-Header.h */,
-			);
-			name = ECSlidingViewController;
-			sourceTree = "<group>";
-		};
 		6569C29B1BEBF07C00D8F850 /* Language */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +135,6 @@
 			children = (
 				6569C29C1BEBF0B600D8F850 /* MenuViewController.swift */,
 				65873AAE1BEE8910002ADFA4 /* MenuCell.swift */,
-				6569C2841BEBED9900D8F850 /* ECSlidingViewController */,
 			);
 			name = "Sliding Menu";
 			sourceTree = "<group>";
@@ -357,10 +315,7 @@
 				658AF8F21BEEC037000CDC32 /* SelectDefaultLanguageViewController.swift in Sources */,
 				6569C29D1BEBF0B600D8F850 /* MenuViewController.swift in Sources */,
 				65873AAF1BEE8910002ADFA4 /* MenuCell.swift in Sources */,
-				6569C2981BEBEDAB00D8F850 /* UIViewController+ECSlidingViewController.m in Sources */,
-				6569C2951BEBEDAB00D8F850 /* ECSlidingInteractiveTransition.m in Sources */,
 				6569C29F1BEBF4F500D8F850 /* Term.swift in Sources */,
-				6569C2961BEBEDAB00D8F850 /* ECSlidingSegue.m in Sources */,
 				6587601E1BF7D7E80099A7E2 /* Question.swift in Sources */,
 				65CF4A381BECFD07001BFDCB /* NewTermViewController.swift in Sources */,
 				6569C25B1BEBCBF000D8F850 /* AppDelegate.swift in Sources */,
@@ -371,9 +326,6 @@
 				65CF4A341BEC4DDA001BFDCB /* TermDetailViewController.swift in Sources */,
 				65FABBBD1C6FDFD900C03F6C /* TermViewController.swift in Sources */,
 				65C4148B1BF7EB9700ADF3BF /* QuizResultsViewController.swift in Sources */,
-				6569C2971BEBEDAB00D8F850 /* ECSlidingViewController.m in Sources */,
-				6569C2941BEBEDAB00D8F850 /* ECSlidingAnimationController.m in Sources */,
-				6569C2931BEBEDAB00D8F850 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				6569C2A81BEBF9AA00D8F850 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dannical.Language;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Language/Language-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -520,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dannical.Language;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Language/Language-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

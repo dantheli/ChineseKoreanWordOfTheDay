@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import ECSlidingViewController
 
 class TermViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate {
     

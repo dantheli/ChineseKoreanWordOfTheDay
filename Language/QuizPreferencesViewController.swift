@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ECSlidingViewController
 
 class QuizPreferencesViewController: UITableViewController {
 
