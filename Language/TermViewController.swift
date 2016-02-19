@@ -66,6 +66,7 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         terms = realmTerms
+        checkEmpty()
         
         title = currentLanguage
         
@@ -86,7 +87,8 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func checkEmpty() {
         if terms.isEmpty {
-            tableViewBackground = UIView()
+            let frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+            tableViewBackground = UIView(frame: frame)
             tableViewBackground!.backgroundColor = UIColor(white: 0.8, alpha: 1)
             
             let emptyLabel = UILabel()
@@ -102,7 +104,6 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let centerYConstraint = NSLayoutConstraint(item: emptyLabel, attribute: .CenterY, relatedBy: .Equal, toItem: tableViewBackground, attribute: .CenterY, multiplier: 1, constant: -(navigationController?.navigationBar.frame.height)!)
             
             tableViewBackground!.addConstraints([centerXConstraint, centerYConstraint])
-            tableViewBackground!.frame = tableView.frame
             
             tableView.addSubview(tableViewBackground!)
             tableView.sendSubviewToBack(tableViewBackground!)
