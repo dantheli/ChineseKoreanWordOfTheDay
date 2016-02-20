@@ -11,11 +11,15 @@ import RealmSwift
 
 class TermDetailViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    
     @IBOutlet weak var formalityLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var charactersLabel: UILabel!
     @IBOutlet weak var romanizationLabel: UILabel!
     @IBOutlet weak var englishLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateView: UIView!
     
     @IBAction func deleteButton(sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
@@ -47,9 +51,9 @@ class TermDetailViewController: UIViewController {
         
         formalityLabel.text = term.formality
         if term.language == "chinese" {
-            languageLabel.text = term.chinese
+            charactersLabel.text = term.chinese
         } else {
-            languageLabel.text = term.korean
+            charactersLabel.text = term.korean
         }
         romanizationLabel.text = term.romanization
         englishLabel.text = term.english
@@ -57,6 +61,7 @@ class TermDetailViewController: UIViewController {
         formatter.dateStyle = .LongStyle
         dateLabel.text = formatter.stringFromDate(term.termDate)
         
+        view.bringSubviewToFront(dateView)
     }
 
     override func didReceiveMemoryWarning() {
