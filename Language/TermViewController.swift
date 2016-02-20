@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import ECSlidingViewController
+import DGElasticPullToRefresh
 
 class TermViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate {
     
@@ -21,8 +22,6 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var refreshControl: UIRefreshControl!
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -39,11 +38,6 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 100.0
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-        refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: .ValueChanged)
-        tableView.addSubview(refreshControl)
         
         // Verify 3D Touch
         if traitCollection.forceTouchCapability == .Available {
@@ -65,7 +59,7 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         terms = realmTerms
-        checkEmpty()
+        setUpPullToRefresh()
         
         title = currentLanguage
         
@@ -77,9 +71,35 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    deinit {
+        tableView.dg_removePullToRefresh()
+    }
+    
+    func setUpPullToRefresh() {
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor.languageBlue()
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            TermManager.getNewTerms({ (error) in
+                if error != nil {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if error!.code == -100 {
+                            self?.alertJSONError()
+                        } else {
+                            self?.alertConnectionError(error!.code)
+                        }
+                        self?.tableView.dg_stopLoading()
+                    }
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    self?.addTermsToTable()
+                    self?.tableView.dg_stopLoading()
+                }
+            })
+            }, loadingView: loadingView)
+        tableView.dg_setPullToRefreshFillColor(UIColor(white: 0.9, alpha: 1.0))
+        tableView.dg_setPullToRefreshBackgroundColor(UIColor.whiteColor())
+        
+        checkEmpty()
     }
     
     // Data
@@ -88,7 +108,8 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if terms.isEmpty {
             let frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
             tableViewBackground = UIView(frame: frame)
-            tableViewBackground!.backgroundColor = UIColor(white: 0.8, alpha: 1)
+            tableView.backgroundColor = UIColor.tableViewNoTermsBackgroundColor()
+            tableView.dg_setPullToRefreshBackgroundColor(UIColor.tableViewNoTermsBackgroundColor())
             
             let emptyLabel = UILabel()
             emptyLabel.text = "No Terms Yet!"
@@ -107,34 +128,14 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tableView.addSubview(tableViewBackground!)
             tableView.sendSubviewToBack(tableViewBackground!)
         } else {
+            tableView.dg_setPullToRefreshBackgroundColor(UIColor.whiteColor())
+            tableView.backgroundColor = UIColor.whiteColor()
+            tableView.dg_setPullToRefreshBackgroundColor(UIColor.whiteColor())
             tableViewBackground?.removeFromSuperview()
         }
     }
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
-        getTerms()
-    }
-    
-    func getTerms() {
-        TermManager.getNewTerms({ (error) in
-            if error != nil {
-                dispatch_async(dispatch_get_main_queue()) {
-                    if error!.code == -100 {
-                        self.alertJSONError()
-                    } else {
-                        self.alertConnectionError(error!.code)
-                    }
-                    self.refreshControl?.endRefreshing()
-                }
-            }
-            dispatch_async(dispatch_get_main_queue()) {
-                self.addTermsToTable()
-            }
-        })
-    }
-    
     func addTermsToTable() {
-        
         let newTerms = realmTerms
         var indexPaths = [NSIndexPath]()
         for term in newTerms {
@@ -146,8 +147,7 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         terms = newTerms
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-        
-        self.refreshControl?.endRefreshing()
+        checkEmpty() // To color tableView background correctly
     }
     
     override func didReceiveMemoryWarning() {

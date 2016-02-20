@@ -38,8 +38,18 @@ public func <(lhs: NSDate, rhs: NSDate) -> Bool {
 
 extension NSDate: Comparable { }
 
+extension UIColor {
+    class func languageBlue() -> UIColor {
+        return UIColor(red: 52/255, green: 111/255, blue: 199/255, alpha: 1)
+    }
+    class func tableViewNoTermsBackgroundColor() -> UIColor {
+        return UIColor(white: 0.8, alpha: 1)
+    }
+}
 
-
+extension UIScrollView {
+    func dg_stopScrollingAnimation() {}
+}
 
 // Tint UIImage
 extension UIImage {
