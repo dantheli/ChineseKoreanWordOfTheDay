@@ -252,6 +252,7 @@ class TermViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             terms = realmTerms
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            checkEmpty()
         }
     }
     
